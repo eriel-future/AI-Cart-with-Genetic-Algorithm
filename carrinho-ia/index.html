@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrinho IA - Algoritmo Genético</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Carrinho IA com Algoritmo Genético</h1>
+      <p>Treine carrinhos com sensores, seleção, cruzamento e mutação. Depois teste o melhor indivíduo em 3 pistas.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel controls">
+      <div class="group">
+        <label for="trackSelect">Pista</label>
+        <select id="trackSelect">
+          <option value="0">Pista 1 - Oval</option>
+          <option value="1">Pista 2 - Curvas</option>
+          <option value="2">Pista 3 - Estreita</option>
+        </select>
+      </div>
+
+      <div class="buttons">
+        <button id="trainBtn">Treinar pista atual</button>
+        <button id="trainAllBtn">Treinar todas</button>
+        <button id="testBtn">Testar melhor da pista</button>
+        <button id="testAllBtn">Testar 3 pistas</button>
+        <button id="stopBtn">Pausar</button>
+        <button id="resetBtn">Reiniciar</button>
+      </div>
+
+      <div class="buttons">
+        <button id="saveBtn">Salvar melhor da pista</button>
+        <button id="loadBtn">Carregar salvo</button>
+        <button id="downloadBtn">Baixar JSON</button>
+      </div>
+
+      <div class="stats">
+        <div><strong>Modo:</strong> <span id="modeText">parado</span></div>
+        <div><strong>Geração:</strong> <span id="generationText">0</span></div>
+        <div><strong>Vivos:</strong> <span id="aliveText">0</span></div>
+        <div><strong>Melhor fitness:</strong> <span id="bestFitnessText">0</span></div>
+        <div><strong>Checkpoints:</strong> <span id="checkpointText">0</span></div>
+        <div><strong>Status:</strong> <span id="statusText">pronto</span></div>
+        <div><strong>IAs salvas:</strong> <span id="savedText">nenhuma</span></div>
+        <div><strong>Teste 3 pistas:</strong> <span id="allTestText">não iniciado</span></div>
+      </div>
+    </section>
+
+    <section class="game-wrap">
+      <canvas id="game" width="1000" height="650"></canvas>
+    </section>
+
+    <section class="panel explanation">
+      <h2>Como funciona</h2>
+      <p>Cada carrinho é um indivíduo. Ele possui 5 sensores de distância. Esses sensores entram em uma rede neural simples, que decide acelerar e virar.</p>
+      <p>Quem percorre mais checkpoints recebe maior fitness. Quem bate cedo é punido. Os melhores indivíduos cruzam seus pesos e geram a próxima geração, com baixa taxa de mutação.</p>
+      <p>Quando um indivíduo aprende bem, clique em <strong>Salvar melhor</strong>. Depois escolha uma pista e clique em <strong>Testar melhor da pista</strong>. Também é possível clicar em <strong>Treinar todas</strong> para salvar uma IA diferente para cada pista e depois usar <strong>Testar 3 pistas</strong>.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
