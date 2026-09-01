@@ -1,3 +1,5 @@
+# AI-Cart-with-Genetic-Algorithm
+
 AI-Cart-with-Genetic-Algorithm
 Artificial Intelligence project using a Genetic Algorithm to train cars to navigate different race tracks. The goal of the project is to make the cars learn, through multiple generations How to navigate the tracks more effectively. At the end, the best car should be able to complete a full test by successfully passing through all 3 different tracks.
 
